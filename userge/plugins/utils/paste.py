@@ -29,7 +29,7 @@ async def paste_(message: Message) -> None:
     await message.edit("`Processing...`")
     text = message.filtered_input_str
     replied = message.reply_to_message
-    use_neko = False
+    use_neko = True
     file_ext = '.txt'
     if not text and replied and replied.document and replied.document.file_size < 2 ** 20 * 10:
         file_ext = os.path.splitext(replied.document.file_name)[1]
